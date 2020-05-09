@@ -1,8 +1,8 @@
 {
     "development": {
-        "db": "mongodb://citizen:citizen@ds253348.mlab.com:53348/citizen"
+        "db": "mongodb://citizen:citizen1@ds253348.mlab.com:53348/citizen"
     },
     "production": {
-        "db": "mongodb://citizen:citizen@ds253348.mlab.com:53348/citizen"
+        "db": "mongodb://citizen:citizen1@ds253348.mlab.com:53348/citizen"
     }
 }
