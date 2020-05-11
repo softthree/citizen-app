@@ -4,7 +4,7 @@ const jwt = require('./utils/jwt');
 const GeneralController = require('./controllers/generalController');
 const UserController = require('./controllers/userController')
 const FeatureController = require('./controllers/featureController')
-const SeedController  = require('./controllers/seedController')
+const SeedController = require('./controllers/seedController')
 
 
 
@@ -18,6 +18,8 @@ router.get('/test', (req, res) => {
 router.post('/login', UserController.login);
 router.post('/register', UserController.register);
 router.post('/update', jwt.verifyJwt, UserController.update);
+router.post('/getUserData', jwt.verifyJwt, UserController.getData);
+
 
 
 router.post('/adminLogin', UserController.adminLogin);

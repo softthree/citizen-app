@@ -80,6 +80,18 @@ const userActions = {
     }
   }),
 
+  getData: asyncMiddleware(async (req, res) => {
+    console.log(req.body, req.decoded)
+    let user = await UserModel.findById(req.decoded.id)
+    if (user) {
+      res.status(status.success.accepted).json({
+        message: 'User details',
+        status: 'success',
+        data: user
+      });
+    }
+  }),
+
   // Admin
   adminLogin:asyncMiddleware(async (req, res) => {
     let user = await AdminModel.findOne({ userName: req.body.nameEmail }).select('+password');
